@@ -13,7 +13,7 @@ jobs:
           STATUS=$(curl -s -o response.txt -w "%{http_code}" -X POST \
             -H "Content-Type: application/json" \
             -d '{"crId":"ABC"}' \
-            http://localhost:3000/webhook)
+            https://8a2f0aab76be.ngrok-free.app/webhook)
           cat response.txt
           if [ "$STATUS" -ne 200 ]; then
             echo "CR is not approved. Blocking merge."
